@@ -1,0 +1,21 @@
+.page {
+  padding: 80px;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
