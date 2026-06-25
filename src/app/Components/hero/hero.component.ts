@@ -11,5 +11,12 @@ export class HeroComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+   ngAfterViewInit() {
+  const video = document.querySelector('video');
+  if (video) {
+    video.muted = true;
+    video.volume = 0;
+  }
 }
+}
+

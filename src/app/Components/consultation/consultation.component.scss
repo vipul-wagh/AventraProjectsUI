@@ -1,0 +1,247 @@
+/* =========================
+   CONSULTATION CONTAINER
+========================= */
+.consultation-container {
+  position: relative;
+  min-height: calc(100vh - 240px);
+  overflow: hidden;
+
+  /* More top & bottom space */
+  margin: 120px 30px;
+  padding: 100px 40px;
+
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   BACKGROUND VIDEO
+========================= */
+.bg-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  z-index: -3;
+
+  
+}
+
+/* =========================
+   DARK OVERLAY
+========================= */
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.45),
+    rgba(20, 20, 20, 0.55)
+  );
+
+  z-index: -2;
+}
+
+/* =========================
+   HEADING
+========================= */
+.consultation-container h2 {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  text-align: center;
+  margin-bottom: 35px;
+
+  text-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================
+   FORM CARD
+========================= */
+form {
+  width: 100%;
+  max-width: 700px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(3px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 20px;
+  padding: 40px;
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+input,
+select,
+textarea {
+  width: 100%;
+
+  padding: 15px 18px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+
+  font-size: 16px;
+  outline: none;
+
+  transition: all 0.3s ease;
+}
+
+/* Placeholder */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Select */
+select option {
+  color: #000;
+}
+
+/* Focus Effect */
+input:focus,
+select:focus,
+textarea:focus {
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Textarea */
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+button {
+  padding: 15px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #d6b37a,
+    #8b6f47
+  );
+
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+
+  background: linear-gradient(
+    135deg,
+    #e2c08c,
+    #9b7b50
+  );
+
+  box-shadow: 0 10px 25px rgba(214, 179, 122, 0.35);
+}
+
+/* =========================
+   SUCCESS / ERROR MESSAGES
+========================= */
+.success {
+  margin-top: 15px;
+  color: #7CFC00;
+  font-weight: 600;
+  text-align: center;
+}
+
+.error {
+  margin-top: 15px;
+  color: #ff6b6b;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 768px) {
+  .consultation-container {
+    margin: 80px 20px;
+    padding: 70px 25px;
+  }
+
+  .consultation-container h2 {
+    font-size: 34px;
+  }
+
+  form {
+    padding: 30px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 480px) {
+  .consultation-container {
+    margin: 60px 15px;
+    padding: 50px 15px;
+    border-radius: 15px;
+  }
+
+  .consultation-container h2 {
+    font-size: 28px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 14px;
+  }
+}

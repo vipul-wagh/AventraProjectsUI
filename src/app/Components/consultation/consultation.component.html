@@ -1,0 +1,35 @@
+<div class="consultation-container">
+
+  <!-- BACKGROUND VIDEO -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="assets\videos\hero-video.mp4.mp4">
+  </video>
+
+  <!-- DARK OVERLAY -->
+  <div class="overlay"></div>
+
+  <h2>Book a Consultation</h2>
+
+  <form [formGroup]="consultationForm" (ngSubmit)="onSubmit()">
+
+    <input formControlName="fullName" placeholder="Full Name" />
+    <input formControlName="email" placeholder="Email" />
+    <input formControlName="phone" placeholder="Phone" />
+
+    <select formControlName="serviceType">
+      <option value="">Select Service</option>
+      <option value="Design">Design</option>
+      <option value="Development">Development</option>
+      <option value="Consulting">Consulting</option>
+    </select>
+
+    <textarea formControlName="message" placeholder="Message"></textarea>
+
+    <button type="submit">Submit</button>
+
+  </form>
+
+  <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+</div>
