@@ -1,0 +1,76 @@
+<div class="registration-page">
+
+    <div class="register-container">
+
+        <h2>User Registration</h2>
+
+        <!-- Username -->
+        <div class="form-group">
+            <label>Username</label>
+
+            <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="user.UserName"
+                name="UserName"
+                placeholder="Enter Username">
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label>Email</label>
+
+            <input
+                type="email"
+                class="form-control"
+                [(ngModel)]="user.Email"
+                name="Email"
+                placeholder="Enter Email">
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+            <label>Password</label>
+
+            <input
+                type="password"
+                class="form-control"
+                [(ngModel)]="user.Password"
+                name="Password"
+                placeholder="Enter Password">
+        </div>
+
+        <!-- User Type -->
+        <div class="form-group">
+            <label>User Type</label>
+
+            <select
+                class="form-control"
+                [(ngModel)]="user.UserTypeId"
+                name="UserTypeId">
+
+                <option [ngValue]="0">-- Select User Type --</option>
+
+                <option
+                    *ngFor="let type of userTypes"
+                    [ngValue]="type.id">
+
+                    {{ type.typeName }}
+
+                </option>
+
+            </select>
+
+        </div>
+
+        <button
+            class="btn-primary"
+            (click)="register()">
+
+            Register
+
+        </button>
+
+    </div>
+
+</div>

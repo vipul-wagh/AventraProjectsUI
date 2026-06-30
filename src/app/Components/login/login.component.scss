@@ -1,0 +1,86 @@
+/* Full Screen Background */
+.login-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/assets/images/interior-bg.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+/* Dark Overlay */
+.login-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(220, 224, 246, 0.55);
+}
+
+/* Login Card */
+.login-box {
+    position: relative;
+    z-index: 2;
+    width: 400px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(216, 241, 248, 0.15);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .4);
+}
+
+/* Heading */
+.login-box h2 {
+    color: rgb(5, 0, 0);
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* Inputs */
+.login-box input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 10px;
+    background: rgba(255,255,255,.95);
+    color: #222;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Placeholder */
+.login-box input::placeholder {
+    color: #555;
+    font-size: 15px;
+    opacity: 1;
+}
+
+/* Focus */
+.login-box input:focus {
+    border-color: #3769d4;
+    box-shadow: 0 0 8px rgba(59, 105, 222, 0.5);
+}
+
+/* Button */
+.login-box button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #378dd4;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-box button:hover {
+    background: #b88a16;
+    transform: translateY(-2px);
+}
