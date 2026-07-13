@@ -1,0 +1,167 @@
+<div class="dashboard">
+
+  <!-- Welcome Banner -->
+  <div class="welcome-card">
+
+    <div>
+
+      <h2>Welcome Back 👋</h2>
+
+      <p>Manage all your referral leads from one place.</p>
+
+    </div>
+
+  </div>
+
+  <!-- Statistics Cards -->
+  <div class="stats">
+
+    <div class="card total">
+
+      <h5>Total Leads</h5>
+
+      <h2>{{ totalLeads }}</h2>
+
+    </div>
+
+    <div class="card approved">
+
+      <h5>Approved</h5>
+
+      <h2>{{ approvedLeads }}</h2>
+
+    </div>
+
+    <div class="card rejected">
+
+      <h5>Rejected</h5>
+
+      <h2>{{ rejectedLeads }}</h2>
+
+    </div>
+
+    <div class="card pending">
+
+      <h5>Pending</h5>
+
+      <h2>{{ pendingLeads }}</h2>
+
+    </div>
+
+    <div class="card value">
+
+      <h5>Project Value</h5>
+
+      <h2>₹ {{ totalProjectValue | number }}</h2>
+
+    </div>
+
+  </div>
+
+  <!-- Recent Leads Table -->
+  <div class="table-card">
+
+    <div class="table-header">
+
+      <h3>Recent Leads</h3>
+
+    </div>
+
+    <table>
+
+      <thead>
+
+        <tr>
+
+          <th>ID</th>
+          <th>Broker</th>
+          <th>Client</th>
+          <th>Mobile</th>
+          <th>Location</th>
+          <th>Property</th>
+          <th>Status</th>
+          <th>Project Value</th>
+          <th>Lead Date</th>
+          <th>Action</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let lead of leads">
+
+          <td>{{ lead.id }}</td>
+
+          <td>{{ lead.brokerName }}</td>
+
+          <td>{{ lead.clientName }}</td>
+
+          <td>{{ lead.clientMobile }}</td>
+
+          <td>{{ lead.projectLocation }}</td>
+
+          <td>{{ lead.propertyType }}</td>
+
+          <td>
+
+            <span
+              class="badge"
+              [ngClass]="{
+                'approved-badge': lead.status == 'Approved',
+                'rejected-badge': lead.status == 'Rejected',
+                'pending-badge': lead.status == 'Pending'
+              }">
+
+              {{ lead.status }}
+
+            </span>
+
+          </td>
+
+          <td>₹ {{ lead.projectValue | number }}</td>
+
+          <td>{{ lead.leadDate | date:'dd/MM/yyyy' }}</td>
+
+          <td class="action-buttons">
+
+            <button
+              class="approve-btn"
+              (click)="updateStatus(lead.id, 'Approved')"
+              [disabled]="lead.status === 'Approved'">
+
+              Approve
+
+            </button>
+
+            <button
+              class="reject-btn"
+              (click)="updateStatus(lead.id, 'Rejected')"
+              [disabled]="lead.status === 'Rejected'">
+
+              Reject
+
+            </button>
+
+          </td>
+
+        </tr>
+
+        <tr *ngIf="leads.length === 0">
+
+          <td colspan="10" class="text-center">
+
+            No Leads Found
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

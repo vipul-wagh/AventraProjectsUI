@@ -6,4 +6,5 @@ export interface Consultation {
   serviceType: string;
   message: string;
   createdAt?: Date;
+   userId?: number;
 }

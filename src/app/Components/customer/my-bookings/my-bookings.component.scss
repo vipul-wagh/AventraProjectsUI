@@ -1,0 +1,164 @@
+/* =========================
+   Container
+========================= */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px;
+    box-sizing: border-box;
+}
+
+/* =========================
+   Heading
+========================= */
+h2 {
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 600;
+    color: #968557;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* =========================
+   Table
+========================= */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(142, 119, 59, 0.08);
+}
+
+.table thead {
+    background: #212529;
+    color: #fff;
+}
+
+.table th,
+.table td {
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #e9ecef;
+    font-size: 15px;
+    word-break: break-word;
+}
+
+.table tbody tr {
+    transition: 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+/* =========================
+   Large Screens
+========================= */
+@media (min-width: 992px) {
+
+    .table th,
+    .table td {
+        font-size: 16px;
+        padding: 16px;
+    }
+}
+
+/* =========================
+   Tablets
+========================= */
+@media (max-width: 991px) {
+
+    .table th,
+    .table td {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+/* =========================
+   Mobile View
+========================= */
+@media (max-width: 767px) {
+
+    .table {
+        min-width: 100%;
+        box-shadow: none;
+    }
+
+    .table thead {
+        display: none;
+    }
+
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 18px;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(227, 202, 114, 0.08);
+    }
+
+    .table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        padding: 14px 16px;
+        border: none;
+        border-bottom: 1px solid #eee;
+        font-size: 14px;
+    }
+
+    .table td:last-child {
+        border-bottom: none;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #f7e166;
+        text-align: left;
+        margin-right: 15px;
+    }
+}
+
+/* =========================
+   Small Phones
+========================= */
+@media (max-width: 480px) {
+
+    .container {
+        padding: 15px 10px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .table td {
+        font-size: 13px;
+        padding: 12px;
+    }
+
+    .table td::before {
+        font-size: 13px;
+    }
+}

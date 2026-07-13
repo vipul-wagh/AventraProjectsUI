@@ -1,10 +1,58 @@
 <header class="navbar">
+
   <div class="logo">VIWA Interiors</div>
 
-  <nav>
+  <!-- Before Login -->
+  <div class="auth-buttons" *ngIf="!isLoggedIn">
+    <button routerLink="/login" class="login-btn">Login</button>
+    <button routerLink="/registration" class="register-btn">Registration</button>
+  </div>
+
+  <!-- After Login -->
+  <nav *ngIf="isLoggedIn">
+
+    <!-- Common -->
     <a routerLink="/hero">Home</a>
-    <a routerLink="/services">Services</a>
+
+    <!-- Admin -->
+    <ng-container *ngIf="userTypeId == 1">
+      <div class="dropdown">
+  <a class="dropbtn">
+    Users <span>▼</span>
+  </a>
+
+  <div class="dropdown-content">
+    <a routerLink="/userlist-dashboard">All Users</a>
+    <a routerLink="/registration">Add User</a>
+  </div>
+</div>
+      <a routerLink="/admin-dashboard">Projects</a>
+      <a routerLink="/inquiries">Inquiries</a>
+    </ng-container>
+
+    <!-- Designer -->
+    <ng-container *ngIf="userTypeId == 2">
+      <a routerLink="/designs">My Designs</a>
+      <a routerLink="/all-leads">Projects</a>
+    </ng-container>
+
+    <!-- Customer -->
+    <ng-container *ngIf="userTypeId == 3">
+      <a routerLink="/services">Services</a>
+      <a routerLink="/consultation">Get Consultation</a>
+      <a routerLink="/mybooking">My Bookings</a>
+    </ng-container>
+
+    <!-- Broker -->
+    <ng-container *ngIf="userTypeId == 4">
+      <a routerLink="/broker-dashboard">Leads</a>
+      <a routerLink="/refer"> Refer-Customers</a>
+    </ng-container>
+
+    <!-- Common -->
     <a routerLink="/about">About</a>
-    <a routerLink="/consultation">Get Consultation</a>
+    <a (click)="logout()" style="cursor:pointer;">Logout</a>
+
   </nav>
+
 </header>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -9,43 +9,92 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-   user = {
-
+  user = {
     UserName: '',
-
     Password: ''
-
   };
 
+  constructor(
+    private loginService: LoginService,
+    private router: Router
+  ) { }
 
-  constructor( private loginService: LoginService,
-    private router: Router) { }
+  ngOnInit(): void { }
 
-  ngOnInit(): void {}
-
-
-    login() {
+  login(): void {
 
     this.loginService.login(this.user).subscribe({
 
-      next: (res) => {
+      next: (res: any) => {
 
-        alert("Login Successful");
+        // Save login status
+        localStorage.setItem('isLoggedIn', 'true');
 
-        this.router.navigate(['/hero']);
+        // Save user details
+        localStorage.setItem('userId', res.id.toString());
+        localStorage.setItem('userName', res.userName);
+        localStorage.setItem('userTypeId', res.userTypeId.toString());
+
+        // Save user type if available
+        if (res.userType) {
+          localStorage.setItem('userType', res.userType);
+        }
+
+        // Save first login status
+        localStorage.setItem('isFirstLogin', res.isFirstLogin.toString());
+
+       // alert('Login Successful');
+
+        // Redirect according to user type
+        switch (res.userTypeId) {
+
+          // Admin
+          case 1:
+            this.router.navigate(['/admin-dashboard'], { replaceUrl: true });
+            break;
+
+          // Designer
+          case 2:
+            this.router.navigate(['/designer-dashboard'], { replaceUrl: true });
+            break;
+
+          // Customer
+          case 3:
+            this.router.navigate(['/hero'], { replaceUrl: true });
+            break;
+
+          // Broker
+         case 4:
+
+  alert("Broker Login");
+
+  if (res.isFirstLogin === true) {
+    alert("Going to Change Password");
+    this.router.navigate(['/change-password']);
+  } else {
+   // alert("Going to Broker Dashboard");
+    this.router.navigate(['/broker-dashboard']);
+  }
+
+  break;
+
+          // Default
+          default:
+            this.router.navigate(['/hero'], { replaceUrl: true });
+            break;
+        }
 
       },
 
-       error: (err) => {
+      error: (err) => {
 
-        alert("Invalid Username or Password");
+        console.error(err);
+        alert('Invalid Username or Password');
 
       }
 
     });
 
   }
-
-
 
 }

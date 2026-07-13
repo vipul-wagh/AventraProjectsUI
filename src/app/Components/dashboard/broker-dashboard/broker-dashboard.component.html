@@ -1,0 +1,81 @@
+<div class="dashboard">
+
+  <!-- Welcome -->
+  <div class="welcome-card">
+    <h2>Welcome {{ brokerName }} 👋</h2>
+    <p>Manage your leads here.</p>
+  </div>
+
+  <!-- Statistics -->
+  <div class="stats">
+
+    <div class="card total">
+        <h5>Total Leads</h5>
+        <h2>{{ totalLeads }}</h2>
+    </div>
+
+    <div class="card approved">
+        <h5>Approved</h5>
+        <h2>{{ approvedLeads }}</h2>
+    </div>
+
+    <div class="card pending">
+        <h5>Pending</h5>
+        <h2>{{ pendingLeads }}</h2>
+    </div>
+
+    <div class="card rejected">
+        <h5>Rejected</h5>
+        <h2>{{ rejectedLeads }}</h2>
+    </div>
+
+</div>
+
+  <!-- Leads Table -->
+  <div class="table-container">
+
+    <h2 class="table-title">My Leads</h2>
+
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Client Name</th>
+          <th>Mobile</th>
+          <th>Location</th>
+          <th>Property</th>
+          <th>Status</th>
+          <th>Project Value</th>
+          <th>Lead Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let lead of leads">
+
+          <td>{{ lead.id }}</td>
+          <td>{{ lead.clientName }}</td>
+          <td>{{ lead.clientMobile }}</td>
+          <td>{{ lead.projectLocation }}</td>
+          <td>{{ lead.propertyType }}</td>
+          <td>{{ lead.status }}</td>
+          <td>₹ {{ lead.projectValue }}</td>
+          <td>{{ lead.leadDate | date:'dd/MM/yyyy' }}</td>
+
+        </tr>
+
+        <tr *ngIf="leads.length === 0">
+          <td colspan="8" style="text-align:center;">
+            No Leads Found
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

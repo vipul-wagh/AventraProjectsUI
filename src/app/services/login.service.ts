@@ -14,4 +14,11 @@ export class LoginService {
 
   }
 
+
+  changePassword(data: any) {
+
+    return this.http.put(this.apiUrl + "/change-password", data);
+
+  }
+
 }

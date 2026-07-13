@@ -1,13 +1,240 @@
+/* ===========================
+   Navbar
+=========================== */
+
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
   display: flex;
   justify-content: space-between;
-  padding: 20px 50px;
-  background: #111;
+  align-items: center;
+
+  padding: 15px 50px;
+
+  background: linear-gradient(135deg, #c8a97e, #cda876);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+/* ===========================
+   Logo
+=========================== */
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* ===========================
+   Navigation
+=========================== */
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+nav a,
+.dropbtn {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: .3s ease;
+  position: relative;
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+/* Underline Animation */
+
+nav a::after,
+.dropbtn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #4e5105;
+  transition: .3s;
+}
+
+nav a:hover,
+.dropbtn:hover {
+  color: #f4faa5;
+}
+
+nav a:hover::after,
+.dropbtn:hover::after {
+  width: 100%;
+}
+
+
+/* Dropdown */
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 180px;
+
+    background: #fff;
+    border-radius: 8px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+
+    z-index: 99999;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:12px 18px;
+    color:#333;
+    text-decoration:none;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover{
+    background:#c8a97e;
+    color:#fff;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+/* ===========================
+   Login/Register Buttons
+=========================== */
+
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.auth-buttons button {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+}
+
+/* Login */
+
+.login-btn {
+  background: transparent;
+  border: 2px solid #0d6efd !important;
+  color: #0d6efd;
+}
+
+.login-btn:hover {
+  background: #0d6efd;
   color: white;
 }
 
-.navbar a {
+/* Register */
+
+.register-btn {
+  background: #0d6efd;
   color: white;
-  margin: 0 15px;
-  text-decoration: none;
+}
+
+.register-btn:hover {
+  background: #084fc7;
+}
+
+/* ===========================
+   Logout
+=========================== */
+
+nav > a:last-child {
+  color: rgb(181, 4, 40);
+  font-weight: 600;
+}
+
+nav > a:last-child::after {
+  background: crimson;
+}
+
+nav > a:last-child:hover {
+  color: darkred;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 992px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .auth-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .auth-buttons button {
+    width: 140px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .logo {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .auth-buttons button {
+    width: 180px;
+  }
 }

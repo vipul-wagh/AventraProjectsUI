@@ -1,0 +1,138 @@
+/* Page */
+.container {
+    margin-top: 30px;
+}
+
+/* Table Card */
+.table-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    color: #725818;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* Responsive Table */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Table */
+.table {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: #c5ab5f;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    padding: 14px;
+    white-space: nowrap;
+}
+
+.table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px;
+}
+
+.table tbody tr:hover {
+    background: #c5d6e7;
+    transition: 0.3s;
+}
+
+/* ==========================
+   Large Desktop (1400px+)
+========================== */
+@media (min-width: 1400px) {
+    .table-container {
+        width: 75%;
+    }
+}
+
+/* ==========================
+   Laptop (992px - 1399px)
+========================== */
+@media (max-width: 1399px) {
+    .table-container {
+        width: 85%;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+}
+
+/* ==========================
+   Tablet (768px - 991px)
+========================== */
+@media (max-width: 991px) {
+    .table-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .table th,
+    .table td {
+        font-size: 15px;
+        padding: 10px;
+    }
+}
+
+/* ==========================
+   Mobile (576px - 767px)
+========================== */
+@media (max-width: 767px) {
+    .table-container {
+        width: 100%;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .table th,
+    .table td {
+        font-size: 14px;
+        padding: 8px;
+        white-space: nowrap;
+    }
+}
+
+/* ==========================
+   Small Mobile (<576px)
+========================== */
+@media (max-width: 575px) {
+    .table-container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .table th,
+    .table td {
+        font-size: 13px;
+        padding: 7px;
+    }
+}
