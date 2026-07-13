@@ -34,27 +34,34 @@ export class ConsultationComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.submitted = true;
-    this.successMessage = '';
-    this.errorMessage = '';
 
-    if (this.consultationForm.invalid) {
-      return;
-    }
+  this.submitted = true;
+  this.successMessage = '';
+  this.errorMessage = '';
 
-    this.consultationService.createConsultation(this.consultationForm.value)
-      .subscribe({
-        next: () => {
-          this.successMessage = 'Consultation request submitted successfully!';
-          this.consultationForm.reset();
-          this.submitted = false;
-        },
-        error: () => {
-          this.errorMessage = 'Something went wrong. Please try again later.';
-        }
-      });
+  if (this.consultationForm.invalid) {
+    return;
   }
 
+  // Get logged-in user's ID
+  const consultationData = {
+    ...this.consultationForm.value,
+    userId: Number(localStorage.getItem('userId'))
+  };
+
+  this.consultationService.createConsultation(consultationData)
+    .subscribe({
+      next: () => {
+        this.successMessage = 'Consultation request submitted successfully!';
+        this.consultationForm.reset();
+        this.submitted = false;
+      },
+      error: () => {
+        this.errorMessage = 'Something went wrong. Please try again later.';
+      }
+    });
+
+}
 
     ngAfterViewInit() {
   const video = document.querySelector('video');

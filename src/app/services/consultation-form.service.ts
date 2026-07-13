@@ -10,6 +10,8 @@ import { Consultation } from '../models/consultation';
 export class ConsultationFormService {
 private baseUrl = 'https://localhost:7164/api/Consultation';
   constructor(private http: HttpClient)  {}
+
+
     createConsultation(data: Consultation): Observable<any> {
     return this.http.post(this.baseUrl, data);
   }
@@ -17,4 +19,13 @@ private baseUrl = 'https://localhost:7164/api/Consultation';
       getAll(): Observable<Consultation[]> {
     return this.http.get<Consultation[]>(this.baseUrl);
        }
+
+
+         getMyBookings(userName: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/GetByUserName/${userName}`);
+  }
+
+   getAllInquiries(): Observable<any> {
+    return this.http.get<any>(this.baseUrl);
+  }
     }

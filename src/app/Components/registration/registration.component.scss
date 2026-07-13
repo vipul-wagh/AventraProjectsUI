@@ -1,104 +1,287 @@
-/* Full Page */
-.registration-page {
+/* ==========================================
+   Background
+========================================== */
+
+.registration-container {
     min-height: 100vh;
-    background: linear-gradient(135deg, #f5f7fa, #dfe9f3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Registration Card */
-.register-container {
     width: 100%;
-    max-width: 450px;
-    background: #ffffff;
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 8%;
+    box-sizing: border-box;
+    background:
+        linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)),
+        url('/assets/images/interior-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* Heading */
-.register-container h2 {
+/* ==========================================
+   Left Section
+========================================== */
+
+.left-section {
+    flex: 1;
+    max-width: 600px;
+    color: #fff;
+}
+
+.left-section h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #f7e165;
+    font-family: 'Cinzel', serif;
+}
+
+.left-section h2 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    color: rgb(103, 82, 49);
+    margin-bottom: 25px;
+}
+
+.left-section p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.8;
+    color: #f5f5f5;
+    max-width: 500px;
+}
+
+/* ==========================================
+   Right Section
+========================================== */
+
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* ==========================================
+   Registration Card
+========================================== */
+
+.register-box {
+    width: 100%;
+    max-width: 460px;
+    padding: 40px;
+    background: rgba(255, 255, 255, .95);
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .35);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.register-box h3 {
     text-align: center;
-    margin-bottom: 30px;
-    color: #1f2937;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #222;
 }
 
-/* Form Group */
+.register-box p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* ==========================================
+   Form
+========================================== */
+
 .form-group {
     margin-bottom: 18px;
 }
 
-/* Label */
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    color: #374151;
     font-weight: 600;
+    color: #333;
 }
 
-/* Inputs & Dropdown */
-.form-control {
+/* Input + Select + Textarea */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
     width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #d1d5db;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 15px;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
     outline: none;
+    transition: .3s;
+    box-sizing: border-box;
+    font-family: inherit;
+    background: #fff;
 }
 
 /* Focus */
-.form-control:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 8px rgba(37, 99, 235, 0.25);
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 8px rgba(13, 110, 253, .25);
 }
 
 /* Placeholder */
-.form-control::placeholder {
-    color: #9ca3af;
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #777;
 }
 
-/* Button */
-.btn-primary {
+/* Address */
+
+.form-group textarea {
+    height: 50px;
+    min-height: 50px;
+    resize: vertical;
+}
+
+/* ==========================================
+   Password Eye Icon
+========================================== */
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 50px;
+}
+
+.password-wrapper i {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.password-wrapper i:hover {
+    color: rgb(103, 82, 49);
+}
+
+/* ==========================================
+   Button
+========================================== */
+
+.register-box button {
     width: 100%;
     margin-top: 10px;
-    padding: 13px;
-    background: #2563eb;
-    color: white;
+    padding: 15px;
     border: none;
     border-radius: 8px;
+    background: rgb(103, 82, 49);
+    color: white;
     font-size: 17px;
     font-weight: 600;
     cursor: pointer;
-    transition: 0.3s;
+    transition: .3s;
 }
 
-/* Hover */
-.btn-primary:hover {
-    background: #1d4ed8;
+.register-box button:hover {
+    background: #b39a09;
     transform: translateY(-2px);
 }
 
-/* Active */
-.btn-primary:active {
-    transform: scale(0.98);
+/* ==========================================
+   Laptop
+========================================== */
+
+@media (max-width:1200px) {
+
+    .registration-container {
+        padding: 50px;
+    }
+
+    .register-box {
+        max-width: 420px;
+    }
+
 }
 
-/* Responsive */
-@media (max-width: 576px) {
+/* ==========================================
+   Tablet
+========================================== */
 
-    .register-container {
+@media (max-width:992px) {
+
+    .registration-container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 40px;
+        padding: 40px 30px;
+    }
+
+    .left-section {
+        max-width: 100%;
+    }
+
+    .left-section p {
+        max-width: 100%;
+    }
+
+    .right-section {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .register-box {
+        max-height: none;
+    }
+
+}
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media (max-width:768px) {
+
+    .registration-container {
         padding: 25px;
     }
 
-    .register-container h2 {
-        font-size: 24px;
+    .register-box {
+        max-width: 100%;
+        padding: 30px;
+    }
+
+}
+
+/* ==========================================
+   Small Mobile
+========================================== */
+
+@media (max-width:480px) {
+
+    .registration-container {
+        padding: 20px;
+    }
+
+    .register-box {
+        padding: 25px 20px;
+    }
+
+    .left-section h1 {
+        margin-bottom: 15px;
+    }
+
+    .left-section h2 {
+        margin-bottom: 15px;
     }
 
 }

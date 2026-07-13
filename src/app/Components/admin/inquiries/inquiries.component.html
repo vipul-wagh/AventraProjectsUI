@@ -1,0 +1,41 @@
+<div class="container mt-4">
+
+    <h2>Consultation Inquiries</h2>
+
+    <div class="table-responsive" *ngIf="inquiries.length > 0">
+
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Service Type</th>
+                    <th>Message</th>
+                    <th>Created Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let inquiry of inquiries">
+                    <td>{{ inquiry.id }}</td>
+                    <td>{{ inquiry.fullName }}</td>
+                    <td>{{ inquiry.email }}</td>
+                    <td>{{ inquiry.phone }}</td>
+                    <td>{{ inquiry.serviceType }}</td>
+                    <td>{{ inquiry.message }}</td>
+                    <td>{{ inquiry.createdAt | date:'dd-MM-yyyy' }}</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="alert alert-info" *ngIf="inquiries.length === 0">
+        No inquiries found.
+    </div>
+
+</div>

@@ -1,0 +1,188 @@
+/* ==========================
+   Table Card
+========================== */
+
+.table-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.table-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ==========================
+   Table
+========================== */
+
+table {
+  width: 100%;
+  min-width: 1200px;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #c5ab5f;
+}
+
+thead th {
+  color: #fff;
+  font-weight: 600;
+  padding: 14px;
+  text-align: center;
+  border: 1px solid #d9d9d9;
+}
+
+tbody td {
+  padding: 14px;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  color: #444;
+}
+
+tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+tbody tr:hover {
+  background: #f3f7ff;
+  transition: 0.3s;
+}
+
+/* ==========================
+   Status Badge
+========================== */
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.approved-badge {
+  background: #28a745;
+}
+
+.rejected-badge {
+  background: #dc3545;
+}
+
+.pending-badge {
+  background: #ffc107;
+  color: #000;
+}
+
+/* ==========================
+   Action Buttons
+========================== */
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.approve-btn,
+.reject-btn {
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.approve-btn {
+  background: #1b8333;
+}
+
+.approve-btn:hover:not(:disabled) {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
+.reject-btn {
+  background: #dc3545;
+}
+
+.reject-btn:hover:not(:disabled) {
+  background: #c82333;
+  transform: translateY(-2px);
+}
+
+.approve-btn:disabled,
+.reject-btn:disabled {
+  background: #bdbdbd;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+}
+
+/* ==========================
+   Empty Row
+========================== */
+
+.text-center {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media (max-width: 992px) {
+
+  .table-card {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 1100px;
+  }
+
+  .approve-btn,
+  .reject-btn {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .table-card {
+    padding: 15px;
+  }
+
+  table {
+    min-width: 1000px;
+  }
+
+  .table-header h3 {
+    font-size: 20px;
+  }
+
+}

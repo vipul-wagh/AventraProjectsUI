@@ -1,0 +1,173 @@
+/* ==========================
+   Container
+========================== */
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* ==========================
+   Heading
+========================== */
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color:#725818;
+    margin-bottom: 25px;
+}
+
+/* ==========================
+   Table Wrapper
+========================== */
+
+.table-responsive {
+   overflow-x: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+
+}
+
+/* ==========================
+   Table
+========================== */
+
+.table {
+      width: 100%;
+    min-width: 900px;
+    margin-bottom: 0;
+    border-collapse: collapse;
+    background: #faf9f9;
+}
+
+/* Header */
+
+.table thead {
+    background: linear-gradient(135deg, #c5ab5f,  #c5ab5f);
+    color: rgb(84, 80, 80);
+}
+
+.table thead th {
+    padding: 16px;
+    font-size: 15px;
+    text-align: center;
+    border: none;
+    white-space: nowrap;
+}
+
+/* Body */
+
+.table tbody td {
+    padding: 14px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #444;
+}
+
+/* Alternate Rows */
+
+.table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+/* Hover */
+
+.table tbody tr:hover {
+    background: #dbe8f7;
+    transition: .3s;
+}
+
+/* Rounded */
+
+.table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+.table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+}
+
+/* ==========================
+   Alert
+========================== */
+
+.alert {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+/* ==========================
+   Scrollbar
+========================== */
+
+.table-responsive::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #bdbb51;
+    border-radius: 20px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: #e9ecef;
+}
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width: 992px) {
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .table thead th,
+    .table tbody td {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .table {
+        min-width: 800px;
+    }
+
+}
+
+/* ==========================
+   Small Mobile
+========================== */
+
+@media (max-width: 480px) {
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .alert {
+        font-size: 14px;
+    }
+
+}

@@ -1,0 +1,217 @@
+/* ==========================
+   Global
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dashboard {
+    padding: 30px;
+    background: #f5f7fb;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ==========================
+   Welcome Banner
+========================== */
+
+.welcome-card {
+    background: linear-gradient(135deg, #c5ab5f, #b79643);
+    color: #fff;
+    padding: 30px 40px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+.welcome-card h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.welcome-card p {
+    font-size: 17px;
+    opacity: .95;
+}
+
+/* ==========================
+   Statistics Cards
+========================== */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    gap: 22px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 30px;
+    min-height: 160px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    transition: .3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+}
+
+.total::before {
+    background: #3b82f6;
+}
+
+.approved::before {
+    background: #10b981;
+}
+
+.pending::before {
+    background: #f59e0b;
+}
+
+.rejected::before {
+    background: #ef4444;
+}
+
+.card h5 {
+    font-size: 18px;
+    color: #6b7280;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card h2 {
+    font-size: 38px;
+    color: #30155f;
+    font-weight: bold;
+}
+
+/* ==========================
+   Table
+========================== */
+
+.table-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.08);
+}
+
+.table-header {
+    margin-bottom: 20px;
+}
+
+.table-header h3 {
+    color: #30155f;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: linear-gradient(135deg,#c5ab5f,#b79643);
+}
+
+thead th {
+    color: #fff;
+    padding: 16px;
+    text-align: left;
+    font-size: 15px;
+}
+
+tbody td {
+    padding: 16px;
+    border-bottom: 1px solid #ececec;
+    color: #444;
+}
+
+tbody tr:hover {
+    background: #fafafa;
+}
+
+/* ==========================
+   Status Badge
+========================== */
+
+.badge {
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.approved-badge {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.pending-badge {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.rejected-badge {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:992px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .dashboard{
+        padding:15px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .welcome-card{
+        padding:20px;
+    }
+
+    .welcome-card h2{
+        font-size:26px;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+}

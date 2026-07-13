@@ -20,7 +20,8 @@ export class AppComponent implements AfterViewInit {
 
        
     // Hide navbar on Landing and Login pages
-    this.showNavbar = url !== '/' && url !== '/login'&& url !=='/registration';
+    this.showNavbar = url !== '/' && url !== '/login'&& url !=='/consultation';
+ // this.showNavbar = url !== '/';
       });
   }
 

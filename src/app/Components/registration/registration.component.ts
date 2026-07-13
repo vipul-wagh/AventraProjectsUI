@@ -10,10 +10,15 @@ import { Router } from '@angular/router';
 })
 export class RegistrationComponent implements OnInit {
 
+  showPassword = false;
+
   user: User = {
      Id: 0,
     UserName: '',
+     LastName: '',
     Email: '',
+     MobileNumber: '',
+    Address: '',
     Password: '',
     UserTypeId: 0
   };
@@ -38,6 +43,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   register(): void {
+    console.log(this.user);
 
     if (this.user.UserTypeId == 0) {
       alert("Please select User Type");
@@ -51,15 +57,28 @@ export class RegistrationComponent implements OnInit {
         this.user = {
            Id: 0,
           UserName: '',
+           LastName: '',
           Email: '',
+          MobileNumber: '',
+          Address: '',
           Password: '',
           UserTypeId: 0
         };
       },
-      error: (err) => {
-        console.log(err);
-        alert("Registration Failed");
-      }
+     error: (err) => {
+
+  console.log("Complete Error");
+  console.log(err);
+
+  console.log("Status");
+  console.log(err.status);
+
+  console.log("Response");
+  console.log(err.error);
+
+  alert("Registration Failed");
+
+}
     });
 
   }

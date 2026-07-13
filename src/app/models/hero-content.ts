@@ -1,3 +1,4 @@
+/*
 export interface HeroContent {
   id: number;
   tagline: string;
@@ -9,5 +10,5 @@ export interface HeroContent {
   primaryButtonLink: string;
   secondaryButtonText: string;
   secondaryButtonLink: string;
-  heroImageUrl: string;
 }
+ */

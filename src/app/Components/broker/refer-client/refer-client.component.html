@@ -1,0 +1,245 @@
+<div class="container mt-4">
+
+    <div class="card">
+
+        <div class="card-header">
+            <h3 class="mb-0">Refer Client</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form [formGroup]="referralForm" (ngSubmit)="saveReferral()">
+
+                <div class="row g-4">
+
+                    <!-- Broker ID -->
+                    <div class="col-12 col-md-6">
+                        <label class="form-label">
+                            Broker ID
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            formControlName="brokerId"
+                            readonly>
+                    </div><hr>
+
+                    <div class="col-12 col-md-6">
+
+    <label class="form-label">
+        Broker Name
+    </label>
+
+    <input
+        type="text"
+        class="form-control"
+        formControlName="brokerName"
+        readonly>
+
+</div>
+
+                    <!-- Client Name -->
+                    <div class="col-12 col-md-6">
+
+                        <label class="form-label">
+                            Client Name
+                            <span class="text-danger">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            formControlName="clientName"
+                            placeholder="Enter Client Name">
+
+                        <div
+                            class="text-danger mt-1"
+                            *ngIf="submitted && f.clientName.errors">
+
+                            Client Name is required.
+
+                        </div>
+
+                    </div><hr>
+
+                    <!-- Client Mobile -->
+                    <div class="col-12 col-md-6">
+
+                        <label class="form-label">
+                            Client Mobile
+                            <span class="text-danger">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            maxlength="10"
+                            class="form-control"
+                            formControlName="clientMobile"
+                            placeholder="Enter Mobile Number">
+
+                        <div
+                            class="text-danger mt-1"
+                            *ngIf="submitted && f.clientMobile.errors">
+
+                            <div *ngIf="f.clientMobile.errors.required">
+                                Mobile Number is required.
+                            </div>
+
+                            <div *ngIf="f.clientMobile.errors.pattern">
+                                Enter a valid 10-digit mobile number.
+                            </div>
+
+                        </div>
+
+                    </div><hr>
+
+                    <!-- Project Location -->
+                    <div class="col-12 col-md-6">
+
+                        <label class="form-label">
+                            Project Location
+                            <span class="text-danger">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            formControlName="projectLocation"
+                            placeholder="Enter Project Location">
+
+                        <div
+                            class="text-danger mt-1"
+                            *ngIf="submitted && f.projectLocation.errors">
+
+                            Project Location is required.
+
+                        </div>
+
+                    </div><hr>
+
+                    <!-- Property Type -->
+                    <div class="col-12 col-md-6">
+
+                        <label class="form-label">
+                            Property Type
+                            <span class="text-danger">*</span>
+                        </label>
+
+                        <select
+                            class="form-select"
+                            formControlName="propertyType">
+
+                            <option value="">Select Property Type</option>
+                            <option value="1 BHK">1 BHK</option>
+                            <option value="2 BHK">2 BHK</option>
+                            <option value="3 BHK">3 BHK</option>
+                            <option value="Villa">Villa</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Plot">Plot</option>
+
+                        </select>
+
+                        <div
+                            class="text-danger mt-1"
+                            *ngIf="submitted && f.propertyType.errors">
+
+                            Property Type is required.
+
+                        </div>
+
+                    </div><hr>
+
+                   <!-- Status -->
+                 <!--
+                    <div class="col-12 col-md-6">
+
+                        <label class="form-label">
+                            Status
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            formControlName="status"
+                            readonly>
+
+                    </div><hr>-->
+
+                    <!-- Project Value -->
+                    <div class="col-12 col-md-6">
+
+                        <label class="form-label">
+                            Project Value
+                            <span class="text-danger">*</span>
+                        </label>
+
+                        <input
+                            type="number"
+                            class="form-control"
+                            formControlName="projectValue"
+                            placeholder="Enter Project Value">
+
+                        <div
+                            class="text-danger mt-1"
+                            *ngIf="submitted && f.projectValue.errors">
+
+                            Project Value is required.
+
+                        </div>
+
+                    </div><hr>
+
+                    <!-- Lead Date -->
+                    <div class="col-12 col-md-6">
+
+                        <label class="form-label">
+                            Lead Date
+                            <span class="text-danger">*</span>
+                        </label>
+
+                        <input
+                            type="date"
+                            class="form-control"
+                            formControlName="leadDate">
+
+                        <div
+                            class="text-danger mt-1"
+                            *ngIf="submitted && f.leadDate.errors">
+
+                            Lead Date is required.
+
+                        </div>
+
+                    </div>
+
+                </div><hr>
+
+                <div class="button-area">
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+
+                        Save Referral
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        (click)="resetForm()">
+
+                        Reset
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
